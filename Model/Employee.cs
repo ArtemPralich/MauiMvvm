@@ -8,5 +8,9 @@ namespace MauiMvvm.Model
 {
 	internal class Employee
 	{
+		public string Name { get; set; }
+		public string Image { get; set; }
+
+		public Company Company { get; set; }
 	}
 }
