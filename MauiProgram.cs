@@ -1,4 +1,7 @@
-﻿namespace MauiMvvm;
+﻿using MauiMvvm.View;
+using MauiMvvm.ViewModel;
+
+namespace MauiMvvm;
 
 public static class MauiProgram
 {
@@ -12,6 +15,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+		builder.Services.AddSingleton<EmployeeViewModel>();
+		builder.Services.AddSingleton<CompanyViewModel>();
+
+		builder.Services.AddSingleton<CompanyView>();
+		builder.Services.AddSingleton<EmployeeView>();
 
 		return builder.Build();
 	}

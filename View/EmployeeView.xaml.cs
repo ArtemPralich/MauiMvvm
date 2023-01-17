@@ -2,9 +2,9 @@ namespace MauiMvvm.View;
 
 public partial class EmployeeView : ContentPage
 {
-	public EmployeeView()
+	public EmployeeView(EmployeeViewModel employeeViewModel)
 	{
 		InitializeComponent();
-		this.BindingContext = new EmployeeViewModel();
+		this.BindingContext = employeeViewModel;
 	}
 }

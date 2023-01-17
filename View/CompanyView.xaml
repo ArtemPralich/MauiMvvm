@@ -4,9 +4,37 @@
              x:Class="MauiMvvm.View.CompanyView"
              Title="CompanyView">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <CollectionView 
+            x:Name="companiesCollectionView" 
+            ItemsSource="{Binding Companies}" 
+            SelectionMode="Single"
+            SelectionChangedCommand="{Binding SelectedCompanyCommand}" 
+            SelectedItem="{Binding SelectedItem}">
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout 
+                        Orientation="Horizontal" 
+                        Padding="10">
+                        
+                        <BoxView 
+                            WidthRequest="100" 
+                            HeightRequest="100"
+                            Color="Maroon">
+
+                        </BoxView>
+                        
+                        <Label 
+                            Text="{Binding Title}" 
+                            VerticalTextAlignment="Center" 
+                            Padding="20" 
+                            FontSize="50">
+                            
+                        </Label>
+                        
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>
