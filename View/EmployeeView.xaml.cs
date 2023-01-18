@@ -2,7 +2,6 @@ using MauiMvvm.Model;
 
 namespace MauiMvvm.View;
 
-[QueryProperty("Company", "Company")]
 public partial class EmployeeView : ContentPage
 {
 	public EmployeeView(EmployeeViewModel employeeViewModel) 

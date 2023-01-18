@@ -7,22 +7,7 @@ namespace MauiMvvm.ViewModel
 {
     internal class CompanyViewModel : BaseViewModel
     {
-        public ObservableCollection<Company> Companies { get; set; } = new ObservableCollection<Company> { new Company() { Title = "ewrwe" } };
-        Company selectedItem;
-		public Company SelectedItem 
-        {
-            get
-            {
-                return selectedItem;
-            }
-            set
-            {
-                if(selectedItem != value)
-                {
-                    selectedItem = value;
-                }
-            }
-        }
+        public ObservableCollection<Company> Companies { get; set; } = new ObservableCollection<Company> { new Company() { Title = "ewrwe" }, new Company() { Title = "qwe123" }, };
 
         public CompanyViewModel()
         {
@@ -30,12 +15,12 @@ namespace MauiMvvm.ViewModel
         }
         public ICommand SelectedCompanyCommand { get; set; }
 
-        async void OnSelectCompany() {
+        async void OnSelectCompany(object company) {
             await Shell.Current.GoToAsync($"{nameof(EmployeeView)}", true, 
                 new Dictionary<string, object> 
                 { 
                     {
-                        "CompanyDetail", SelectedItem 
+                        "CompanyDetail", company
                     } 
                 });
         }
