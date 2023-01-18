@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MauiMvvm.Model
 {
-	internal class Company
+	public class Company
 	{
 		public string Title { get; set; }
 

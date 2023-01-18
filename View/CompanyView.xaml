@@ -7,9 +7,10 @@
         <CollectionView 
             x:Name="companiesCollectionView" 
             ItemsSource="{Binding Companies}" 
-            SelectionMode="Single"
+            SelectionMode="Multiple"
+            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
             SelectionChangedCommand="{Binding SelectedCompanyCommand}" 
-            SelectedItem="{Binding SelectedItem}">
+            SelectionChangedCommandParameter="{Binding .}">
             
             <CollectionView.ItemTemplate>
                 <DataTemplate>

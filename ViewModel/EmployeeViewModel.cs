@@ -1,10 +1,24 @@
-﻿using MauiMvvm.ViewModel;
+﻿using MauiMvvm.Model;
+using MauiMvvm.ViewModel;
 
 namespace MauiMvvm.View
 {
-	[QueryProperty("Company", "Company")]
-	internal class EmployeeViewModel : BaseViewModel
+	[QueryProperty(nameof(CompanyDetail), "CompanyDetail")]
+	public class EmployeeViewModel : BaseViewModel
 	{
-		CompanyView _company { get; set; }
+		private Company _company;
+		public Company CompanyDetail
+		{
+			get
+			{
+				return _company;
+			}
+			set
+			{
+				
+				_company = value;
+				OnPropertyChanged(nameof(CompanyDetail));
+            }
+		}
 	}
 }

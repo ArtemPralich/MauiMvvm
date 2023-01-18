@@ -19,7 +19,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<EmployeeViewModel>();
 		builder.Services.AddSingleton<CompanyViewModel>();
 
-		builder.Services.AddSingleton<CompanyView>();
+		builder.Services.AddTransient<CompanyView>();
 		builder.Services.AddSingleton<EmployeeView>();
 
 		return builder.Build();

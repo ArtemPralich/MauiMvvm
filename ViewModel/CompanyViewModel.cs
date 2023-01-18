@@ -34,8 +34,8 @@ namespace MauiMvvm.ViewModel
             await Shell.Current.GoToAsync($"{nameof(EmployeeView)}", true, 
                 new Dictionary<string, object> 
                 { 
-                    { 
-                        "Company", SelectedItem 
+                    {
+                        "CompanyDetail", SelectedItem 
                     } 
                 });
         }
